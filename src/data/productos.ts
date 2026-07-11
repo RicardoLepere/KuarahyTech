@@ -20,11 +20,12 @@ export const productos: Producto[] = [
     badge: 'SAAS ▸ FINANZAS',
     soon: false,
     title: 'COBRANZAS 360 ▸',
-    desc: 'El ecosistema de tu gestión financiera. Clientes, cobros y vencimientos en un solo panel: sabé quién debe, cuánto y cuándo cobrás.',
+    desc: 'Gestioná el ciclo completo de comisiones de cobranza: los cobradores suben sus comprobantes, contabilidad los aprueba y el sistema calcula todo solo, según la escala que vos definas.',
     feats: [
-      'Cartera de clientes ordenada',
-      'Seguimiento de cobros y pagos',
-      'Accesible desde cualquier dispositivo',
+      'Carga de comprobantes con OCR automático',
+      'Flujo de aprobación: cobrador ▸ contabilidad',
+      'Escala de comisiones 100% configurable',
+      'Dashboard de producción en tiempo real',
     ],
     ctas: [
       { label: 'PROBAR LA DEMO ▸', href: 'https://cobranza360.up.railway.app/login', primary: true },
@@ -32,13 +33,13 @@ export const productos: Producto[] = [
     ],
   },
   {
-    badge: 'SAAS ▸ INGRESOS',
+    badge: 'RPA ▸ INGRESOS',
     soon: true,
     title: 'CUADRE ▸',
-    desc: 'Cuadrá tus números sin planillas. Registrá tus ingresos, mirá el promedio real de tu negocio y decidí con datos, no con corazonadas.',
+    desc: 'Automatizá el cuadre de caja a partir de tus extractos bancarios: el bot lee los documentos, calcula el promedio real de tus ingresos y te ahorra la planilla.',
     feats: [
-      'Registro simple de ingresos',
-      'Promedios claros al instante',
+      'Lee tus extractos bancarios automáticamente',
+      'Calcula el promedio de ingresos sin cargar nada a mano',
       'Pensado para pymes y comercios',
     ],
     ctas: [
