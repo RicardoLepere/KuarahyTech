@@ -35,14 +35,14 @@ export const equipo: TeamMember[] = [
     initial: 'L',
     name: 'LUCIANO MENDIETA',
     role: 'Frontend developer ▸ foco en frontend y atención a la lógica del programa.',
-    stack: ['ASTRO', 'TAILWIND', 'TYPESCRIPT'],
+    stack: ['ASTRO', 'TAILWIND', 'ASP .NET CORE', 'BLAZOR'],
     avatarAlt: false,
   },
   {
     initial: 'R',
     name: 'RICARDO PEREZ',
     role: 'Backend developer ▸ backend, lógica de negocio e integraciones.',
-    stack: ['NODE.JS', 'POSTGRES', 'DOCKER'],
+    stack: ['LARAVEL', 'POSTGRES', 'JAVASCRIPT', 'N8N'],
     avatarAlt: true,
   },
 ];
