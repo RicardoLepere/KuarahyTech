@@ -36,7 +36,7 @@ export const productos: Producto[] = [
     badge: 'RPA ▸ INGRESOS',
     soon: true,
     title: 'CUADRE ▸',
-    desc: 'Automatizá el cuadre de caja a partir de tus extractos bancarios: el bot lee los documentos, calcula el promedio real de tus ingresos y te ahorra la planilla.',
+    desc: 'Automatizá el cuadre a partir de tus extractos bancarios: el bot lee los documentos, calcula el promedio real de tus ingresos y te ahorra la planilla.',
     feats: [
       'Lee tus extractos bancarios automáticamente',
       'Calcula el promedio de ingresos sin cargar nada a mano',
