@@ -1,0 +1,51 @@
+---
+import Button from './Button.astro';
+import { servicios, proceso } from '../data/servicios';
+import { waLink } from '../data/site';
+---
+
+<section class="section py-[88px]" id="servicios">
+  <div class="max-w-[var(--container-kuarahy)] mx-auto px-6">
+    <p class="reveal font-display text-xs tracking-[1px] text-amanecer mb-4 uppercase">01 ▸ ESTUDIO</p>
+    <h2 class="reveal font-display font-bold text-[clamp(1.6rem,4vw,2.6rem)] leading-[1.15] uppercase mb-[18px]">SERVICIOS</h2>
+    <p class="reveal max-w-[560px] text-muted dark:text-muted-dark mb-12">
+      Desarrollo a medida con dedicación total a tu proyecto. Frases cortas, código claro, entregas que funcionan.
+    </p>
+
+    <div class="grid grid-cols-4 gap-6 max-[900px]:grid-cols-2 max-[560px]:grid-cols-1">
+      {servicios.map((s) => (
+        <article class="card reveal bg-white dark:bg-panel border-pixel border-noche dark:border-crema shadow-pixel-lg p-7 px-6 transition-[transform,box-shadow] duration-150 hover:translate-x-[3px] hover:translate-y-[3px] hover:shadow-pixel-xs">
+          <p class="inline-block font-display text-[11px] bg-sol text-noche border-2 border-noche px-2 py-1 mb-[18px]">{s.num}</p>
+          <h3 class="font-display font-bold text-[15px] leading-[1.35] uppercase mb-3">{s.title}</h3>
+          <p class="text-muted dark:text-muted-dark text-[.98rem]">{s.desc}</p>
+          <ul class="my-4 mb-5">
+            {s.feats.map((f) => (
+              <li class="text-[.92rem] text-muted dark:text-muted-dark py-[3px]">▸ {f}</li>
+            ))}
+          </ul>
+          <a
+            href={s.ctaHref}
+            target="_blank"
+            rel="noopener"
+            class="font-display text-[11px] tracking-[1px] border-b-[3px] border-sol pb-[3px] transition-colors duration-150 hover:text-amanecer"
+          >COTIZAR ▸</a>
+        </article>
+      ))}
+    </div>
+
+    <div class="process reveal flex flex-wrap items-center justify-center gap-x-[22px] gap-y-4 mt-14 py-[26px] px-5 border-pixel border-noche dark:border-crema bg-white dark:bg-panel shadow-pixel-lg font-display text-xs tracking-[1px] text-center">
+      {proceso.map((p, i) => (
+        <>
+          <span class="flex flex-col gap-1">
+            {p.step}<small class="font-body text-[.78rem] font-medium tracking-normal normal-case text-muted dark:text-muted-dark">{p.time}</small>
+          </span>
+          {i < proceso.length - 1 && <span class="text-amanecer text-[15px]">▸</span>}
+        </>
+      ))}
+    </div>
+
+    <div class="reveal mt-12">
+      <Button href={waLink('Hola! Quiero cotizar un proyecto con el estudio')} variant="primary" external>COTIZÁ TU PROYECTO ▸</Button>
+    </div>
+  </div>
+</section>

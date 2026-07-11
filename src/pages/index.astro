@@ -1,0 +1,31 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Hero from '../components/Hero.astro';
+import Areas from '../components/Areas.astro';
+import Servicios from '../components/Servicios.astro';
+import Productos from '../components/Productos.astro';
+import Casos from '../components/Casos.astro';
+import Nosotros from '../components/Nosotros.astro';
+import Faq from '../components/Faq.astro';
+import Contacto from '../components/Contacto.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<BaseLayout
+  title="Kuarahy Tech ▸ Estudio de Software y Productos SaaS"
+  description="Kuarahy Tech: estudio de software y productos SaaS en Paraguay. Webs, tiendas y sistemas que funcionan desde el día uno. Vos ponés la idea, nosotros el código."
+>
+  <Header />
+  <main>
+    <Hero />
+    <Areas />
+    <Servicios />
+    <Productos />
+    <Casos />
+    <Nosotros />
+    <Faq />
+    <Contacto />
+  </main>
+  <Footer />
+</BaseLayout>

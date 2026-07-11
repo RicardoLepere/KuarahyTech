@@ -1,0 +1,48 @@
+---
+import { valores, equipo } from '../data/nosotros';
+
+const borderClass = {
+  sol: 'border-sol',
+  amanecer: 'border-amanecer',
+  cielo: 'border-cielo',
+};
+---
+
+<section class="section section-nosotros py-[88px]" id="nosotros">
+  <div class="max-w-[var(--container-kuarahy)] mx-auto px-6">
+    <div class="grid grid-cols-2 gap-14 items-start max-[900px]:grid-cols-1">
+      <div class="reveal">
+        <p class="font-display text-xs tracking-[1px] text-amanecer mb-4 uppercase">04 ▸ NOSOTROS</p>
+        <h2 class="font-display font-bold text-[clamp(1.6rem,4vw,2.6rem)] leading-[1.15] uppercase mb-[18px]">KUARAHY =<br>SOL EN GUARANÍ</h2>
+        <p class="max-w-[560px] text-muted dark:text-muted-dark">
+          Somos una startup paraguaya de software: un estudio que construye proyectos a medida y una fábrica de productos SaaS. Dos áreas, una sola esencia. Dos devs, enfoque total: trabajás directo con quienes desarrollan tu proyecto.
+        </p>
+      </div>
+      <ul class="reveal">
+        {valores.map((v) => (
+          <li class={`border-l-[6px] ${borderClass[v.borderColor]} pl-[22px] py-1 mb-[30px]`}>
+            <h3 class="font-display text-[13px] tracking-[1px] uppercase mb-2">{v.title}</h3>
+            <p class="text-muted dark:text-muted-dark text-[.98rem]">{v.desc}</p>
+          </li>
+        ))}
+      </ul>
+    </div>
+
+    <div class="grid grid-cols-2 gap-7 mt-14 max-[900px]:grid-cols-1">
+      {equipo.map((m) => (
+        <article class="team-card reveal flex gap-[22px] items-start bg-white dark:bg-panel border-pixel border-noche dark:border-crema shadow-pixel-lg p-[26px] px-6">
+          <div class={`flex-shrink-0 w-16 h-16 flex items-center justify-center font-display font-bold text-[26px] text-noche border-pixel border-noche ${m.avatarAlt ? 'bg-amanecer' : 'bg-sol'}`}>{m.initial}</div>
+          <div>
+            <h3 class="font-display font-bold text-[15px] leading-[1.35] uppercase mb-3">{m.name}</h3>
+            <p class="text-muted dark:text-muted-dark text-[.95rem] my-2 mb-3.5">{m.role}</p>
+            <ul class="flex flex-wrap gap-2">
+              {m.stack.map((s) => (
+                <li class="font-display text-[9px] tracking-[1px] bg-crema dark:bg-noche border-2 border-noche dark:border-crema px-2 py-1">{s}</li>
+              ))}
+            </ul>
+          </div>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>

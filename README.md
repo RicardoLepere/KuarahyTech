@@ -4,7 +4,7 @@ Landing page oficial de **Kuarahy Tech**, estudio de desarrollo web y soluciones
 
 ## Sobre el proyecto
 
-Sitio estático de una sola página que presenta el estudio: servicios, productos SaaS propios, casos y contacto. Construido sin frameworks ni build tools, con foco en performance y diseño responsive.
+Sitio de una sola página que presenta el estudio: servicios, productos SaaS propios, casos y contacto. Construido con Astro + Tailwind, con el contenido de cada sección extraído a archivos de datos tipados para poder editarlo sin tocar el markup.
 
 ## Secciones
 
@@ -18,33 +18,46 @@ Sitio estático de una sola página que presenta el estudio: servicios, producto
 
 ## Stack técnico
 
-- HTML5 semántico
-- CSS3 (modo claro/oscuro, animaciones, diseño responsive)
-- JavaScript vanilla (sin dependencias externas)
+- [Astro](https://astro.build) (sitio estático, componentes `.astro`)
+- [Tailwind CSS v4](https://tailwindcss.com) (tokens de marca vía `@theme` en `src/styles/global.css`)
+- TypeScript para la interactividad (loader, tema, nav, reveals) sin frameworks de UI
 - Fuentes: Outfit y Silkscreen (self-hosted, formato woff2)
 
 ## Estructura
 
 ```
-├── index.html
-├── css/
-│   └── styles.css
-├── js/
-│   └── main.js
-├── fonts/
-└── img/
-    └── brand/
+├── src/
+│   ├── components/   # Header, Hero, Servicios, Productos, Casos, Nosotros, Faq, Contacto, Footer, Button
+│   ├── data/          # contenido editable: servicios.ts, productos.ts, casos.ts, nosotros.ts, faq.ts, site.ts
+│   ├── layouts/        # BaseLayout.astro
+│   ├── pages/          # index.astro
+│   ├── scripts/        # loader, theme, nav, reveal, pixel sun (TS)
+│   └── styles/          # global.css (tokens de marca + fuentes)
+├── public/
+│   ├── fonts/
+│   └── img/
+└── astro.config.mjs
 ```
 
 ## Cómo correrlo localmente
 
-No requiere instalación ni build. Alcanza con abrir `index.html` en el navegador, o servirlo con cualquier servidor estático:
-
 ```bash
-python3 -m http.server 8000
+npm install
+npm run dev
 ```
 
-Luego abrir `http://localhost:8000`.
+Luego abrir `http://localhost:4321`.
+
+Para generar el build de producción:
+
+```bash
+npm run build
+npm run preview
+```
+
+## Editar contenido
+
+El texto de cada sección vive en `src/data/`: para cambiar un servicio, producto SaaS, caso de éxito, valor o pregunta frecuente, alcanza con editar el archivo `.ts` correspondiente, sin tocar los componentes `.astro`.
 
 ## Contacto
 

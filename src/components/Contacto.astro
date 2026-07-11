@@ -1,0 +1,17 @@
+---
+import Button from './Button.astro';
+import { waLink, EMAIL } from '../data/site';
+---
+
+<section class="section section-dark contacto py-[88px] bg-noche text-crema border-y-[3px] border-noche dark:border-crema" id="contacto">
+  <div class="max-w-[var(--container-kuarahy)] mx-auto px-6 text-center">
+    <h2 class="reveal font-display font-bold text-[clamp(1.8rem,5vw,3rem)] uppercase mb-[18px]">¿ARRANCAMOS? ▸</h2>
+    <p class="reveal max-w-[560px] mx-auto text-mist mb-12">Escribinos por WhatsApp y contanos tu idea. Respondemos en menos de 2 horas.</p>
+    <div class="reveal">
+      <Button href={waLink('Hola Kuarahy Tech! Quiero contarles mi idea')} variant="primary" size="xl" external>WHATSAPP ▸ +595 985 895 895</Button>
+    </div>
+    <p class="reveal mt-[30px] font-display text-[11px] tracking-[1px] text-mist">
+      O POR CORREO ▸ <a href={`mailto:${EMAIL}`} class="text-sol border-b-2 border-sol pb-0.5 hover:text-amanecer hover:border-amanecer">{EMAIL.toUpperCase()}</a>
+    </p>
+  </div>
+</section>

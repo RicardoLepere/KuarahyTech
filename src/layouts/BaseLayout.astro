@@ -1,0 +1,63 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description: string;
+}
+
+const { title, description } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{title}</title>
+  <meta name="description" content={description}>
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Kuarahy Tech ▸ El sol sale para tu idea">
+  <meta property="og:description" content="Estudio de software y productos SaaS. Webs, tiendas y sistemas que funcionan desde el día uno.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="/img/brand/banner-generico-1920x1080.png">
+
+  <link rel="icon" type="image/png" href="/img/brand/avatar-1024-color.png">
+  <link rel="preload" href="/fonts/silkscreen-400-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/silkscreen-700-latin.woff2" as="font" type="font/woff2" crossorigin>
+
+  <script>
+    import { applyTheme } from '../scripts/theme';
+    applyTheme();
+  </script>
+</head>
+<body class="bg-crema dark:bg-noche text-noche dark:text-crema font-body transition-colors duration-300">
+
+  <!-- ══ LOADER ▸ SOL PIXEL ══ -->
+  <div id="loader" aria-hidden="true" class="fixed inset-0 z-[1000] bg-noche flex items-center justify-center">
+    <div class="flex flex-col items-center gap-10">
+      <div id="loaderSun" class="pixel-sun"></div>
+      <div id="loaderPct" class="font-display text-base tracking-[2px] text-sol">0%</div>
+    </div>
+  </div>
+
+  <slot />
+
+  <script>
+    import { runLoader } from '../scripts/loader';
+    import { heroSun } from '../scripts/heroSun';
+    import { nav } from '../scripts/nav';
+    import { bindThemeToggle } from '../scripts/theme';
+    import { reveals } from '../scripts/reveal';
+
+    document.addEventListener('DOMContentLoaded', () => {
+      runLoader();
+      heroSun();
+      nav();
+      bindThemeToggle();
+      reveals();
+    });
+  </script>
+</body>
+</html>

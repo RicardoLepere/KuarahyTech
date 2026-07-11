@@ -1,0 +1,30 @@
+---
+import { casos } from '../data/casos';
+---
+
+<section class="section py-[88px]" id="casos">
+  <div class="max-w-[var(--container-kuarahy)] mx-auto px-6">
+    <p class="reveal font-display text-xs tracking-[1px] text-amanecer mb-4 uppercase">03 ▸ PRUEBAS</p>
+    <h2 class="reveal font-display font-bold text-[clamp(1.6rem,4vw,2.6rem)] leading-[1.15] uppercase mb-[18px]">CASOS DE ÉXITO</h2>
+    <p class="reveal max-w-[560px] text-muted dark:text-muted-dark mb-12">Nuestra mejor publicidad son los problemas que ya resolvimos.</p>
+
+    <div class="grid grid-cols-3 gap-7 items-stretch max-[900px]:grid-cols-1">
+      {casos.map((c) => (
+        <article class="case-card reveal flex flex-col bg-white dark:bg-panel border-pixel border-noche dark:border-crema shadow-pixel-xl">
+          {c.img && (
+            <div class="case-img border-b-[3px] border-noche dark:border-crema bg-noche">
+              <img src={c.img.src} alt={c.img.alt} loading="lazy" class="w-full h-[180px] object-cover object-top">
+            </div>
+          )}
+          <div class="case-body p-[26px] px-6">
+            <p class="font-display text-[10px] tracking-[1px] text-cielo mb-3">{c.tag}</p>
+            <h3 class="font-display font-bold text-[15px] leading-[1.35] uppercase mb-3">{c.title}</h3>
+            <p class="text-[.95rem] text-muted dark:text-muted-dark mt-2.5"><strong class="text-noche dark:text-crema font-semibold">Problema ▸</strong> {c.problema}</p>
+            <p class="text-[.95rem] text-muted dark:text-muted-dark mt-2.5"><strong class="text-noche dark:text-crema font-semibold">Solución ▸</strong> {c.solucion}</p>
+            <p class="text-[.95rem] text-muted dark:text-muted-dark mt-2.5"><strong class="text-noche dark:text-crema font-semibold">Resultado ▸</strong> {c.resultado}</p>
+          </div>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>

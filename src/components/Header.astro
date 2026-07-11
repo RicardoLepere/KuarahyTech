@@ -1,0 +1,69 @@
+---
+import { NAV_LINKS, waLink } from '../data/site';
+
+const contactHref = waLink('Hola! Quiero hablar con Kuarahy Tech');
+---
+
+<header class="header sticky top-0 z-[100] bg-crema dark:bg-noche border-b-[3px] border-noche dark:border-crema" id="inicio">
+  <nav class="navbar">
+    <div class="max-w-[var(--container-kuarahy)] mx-auto px-6 flex items-center justify-between gap-5 py-3.5 relative">
+      <a href="#inicio" class="flex items-center gap-3" aria-label="Kuarahy Tech inicio">
+        <img src="/img/brand/isotipo-color-transparente.png" alt="" class="h-[34px] w-auto">
+        <span class="font-display font-bold text-[15px] tracking-[1px]">KUARAHY<span class="text-amanecer">.</span>TECH</span>
+      </a>
+
+      <div class="nav-actions flex items-center gap-3 min-[901px]:order-3">
+        <button
+          class="theme-toggle w-10 h-10 bg-white dark:bg-panel border-pixel border-noche dark:border-crema cursor-pointer flex items-center justify-center shadow-pixel-sm transition-[transform,box-shadow] duration-150 hover:translate-x-0.5 hover:translate-y-0.5 hover:shadow-pixel-2xs"
+          id="themeToggle"
+          aria-label="Cambiar modo claro / oscuro"
+        >
+          <span
+            class="theme-icon w-3.5 h-3.5 bg-sol shadow-[0_-7px_0_-3px_var(--color-amanecer),0_7px_0_-3px_var(--color-amanecer),-7px_0_0_-3px_var(--color-amanecer),7px_0_0_-3px_var(--color-amanecer)] dark:bg-cielo dark:shadow-[-4px_-4px_0_-4px_var(--color-crema)]"
+            aria-hidden="true"
+          ></span>
+        </button>
+        <button
+          class="hamburger w-10 h-10 bg-white dark:bg-panel border-pixel border-noche dark:border-crema shadow-pixel-sm cursor-pointer flex-col items-center justify-center gap-1 flex min-[901px]:hidden"
+          id="hamburger"
+          aria-label="Abrir menú"
+          aria-expanded="false"
+        >
+          <span class="block w-[18px] h-[3px] bg-noche dark:bg-crema"></span>
+          <span class="block w-[18px] h-[3px] bg-noche dark:bg-crema"></span>
+          <span class="block w-[18px] h-[3px] bg-noche dark:bg-crema"></span>
+        </button>
+      </div>
+
+      <ul
+        id="navLinks"
+        class="nav-links flex items-center gap-6.5
+          max-[900px]:hidden max-[900px]:absolute max-[900px]:top-full max-[900px]:left-0 max-[900px]:right-0 max-[900px]:flex-col max-[900px]:items-stretch max-[900px]:gap-0
+          max-[900px]:bg-crema max-[900px]:dark:bg-noche max-[900px]:border-b-[3px] max-[900px]:border-noche max-[900px]:dark:border-crema"
+      >
+        {NAV_LINKS.map((link) => (
+          <li class="max-[900px]:border-t-2 max-[900px]:border-noche max-[900px]:dark:border-crema">
+            <a
+              href={link.href}
+              class="font-display text-[11px] tracking-[1px] py-1.5 px-0.5 border-b-[3px] border-transparent transition-colors duration-150 hover:text-amanecer hover:border-sol max-[900px]:block max-[900px]:px-6 max-[900px]:py-4 max-[900px]:border-b-0"
+            >{link.label}</a>
+          </li>
+        ))}
+        <li class="max-[900px]:border-t-2 max-[900px]:border-noche max-[900px]:dark:border-crema">
+          <a
+            href={contactHref}
+            target="_blank"
+            rel="noopener"
+            class="bg-sol text-noche border-pixel border-noche px-4 py-2.5 shadow-pixel-md transition-[transform,box-shadow] duration-150 hover:translate-x-0.5 hover:translate-y-0.5 hover:shadow-pixel-2xs font-display text-[11px] tracking-[1px] inline-block max-[900px]:m-4"
+          >CONTACTO ▸</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</header>
+
+<style>
+  #navLinks.open {
+    display: flex;
+  }
+</style>

@@ -1,0 +1,42 @@
+---
+import Button from './Button.astro';
+import { waLink } from '../data/site';
+---
+
+<section class="hero py-[88px] pb-[72px] overflow-hidden max-[900px]:py-14">
+  <div class="max-w-[var(--container-kuarahy)] mx-auto px-6 grid grid-cols-[1.1fr_.9fr] gap-14 items-center max-[900px]:grid-cols-1">
+    <div class="hero-text reveal">
+      <p class="font-display text-xs tracking-[1px] text-amanecer mb-4 uppercase">▸ ESTUDIO DE SOFTWARE + SAAS</p>
+      <h1 class="font-display font-bold text-[clamp(2.1rem,5.5vw,3.6rem)] leading-[1.12] uppercase mb-[22px]">
+        EL SOL SALE<br>PARA<br><span class="text-noche bg-sol px-2.5 shadow-pixel-amanecer">TU IDEA</span>
+      </h1>
+      <p class="max-w-[480px] text-muted dark:text-muted-dark text-[1.15rem] mb-[34px]">
+        Webs, tiendas y sistemas que funcionan desde el día uno. Vos ponés la idea, nosotros el código.
+      </p>
+      <div class="flex flex-wrap gap-[18px] max-[560px]:[&>a]:w-full max-[560px]:[&>a]:text-center">
+        <Button href={waLink('Hola! Tengo una idea y quiero hacerla brillar')} variant="primary" external>EMPEZAR ▸</Button>
+        <Button href="#productos" variant="ghost">VER PRODUCTOS</Button>
+      </div>
+      <ul class="flex flex-wrap gap-x-6 gap-y-2.5 mt-[30px] font-display text-[10px] tracking-[1px] text-muted dark:text-muted-dark">
+        <li>▸ RESPONDEMOS EN MENOS DE 2H</li>
+        <li>▸ SITIOS 100% A MEDIDA</li>
+        <li>▸ HECHO EN PARAGUAY</li>
+      </ul>
+    </div>
+
+    <div class="hero-visual reveal">
+      <div class="border-pixel border-noche bg-noche shadow-pixel-sol">
+        <div class="flex items-center gap-2 py-2.5 px-3.5 bg-sol border-b-[3px] border-noche">
+          <span class="w-2.5 h-2.5 bg-noche"></span>
+          <span class="w-2.5 h-2.5 bg-amanecer"></span>
+          <span class="w-2.5 h-2.5 bg-crema"></span>
+          <span class="ml-auto font-display text-[10px] text-noche">kuarahy_tech.exe</span>
+        </div>
+        <div class="flex flex-col items-center gap-[30px] px-6 pt-11 pb-[34px]">
+          <div id="heroSun" class="pixel-sun"></div>
+          <p class="font-display text-[11px] tracking-[1px] text-crema text-center">EL SOL SALE PARA TODOS ▸<span class="text-sol animate-blink">█</span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,20 @@
+---
+import { faq } from '../data/faq';
+---
+
+<section class="section section-faq pt-0 pb-[88px]" id="faq">
+  <div class="max-w-[var(--container-kuarahy)] mx-auto px-6">
+    <p class="reveal font-display text-xs tracking-[1px] text-amanecer mb-4 uppercase">05 ▸ FAQ</p>
+    <h2 class="reveal font-display font-bold text-[clamp(1.6rem,4vw,2.6rem)] leading-[1.15] uppercase mb-[18px]">PREGUNTAS FRECUENTES</h2>
+    <div class="reveal max-w-[760px]">
+      {faq.map((item) => (
+        <details class="faq-item bg-white dark:bg-panel border-pixel border-noche dark:border-crema shadow-pixel-lg mb-[18px] [&[open]_.faq-plus]:rotate-45">
+          <summary class="flex items-center justify-between gap-4 cursor-pointer list-none [&::-webkit-details-marker]:hidden font-display text-xs tracking-[1px] py-[18px] px-5">
+            {item.pregunta} <span class="faq-plus text-amanecer text-base flex-shrink-0 transition-transform duration-150">+</span>
+          </summary>
+          <p class="px-5 pb-[18px] text-muted dark:text-muted-dark">{item.respuesta}</p>
+        </details>
+      ))}
+    </div>
+  </div>
+</section>

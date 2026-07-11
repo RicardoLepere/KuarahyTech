@@ -1,0 +1,34 @@
+---
+import Button from './Button.astro';
+import { productos } from '../data/productos';
+---
+
+<section class="section section-dark py-[88px] bg-noche text-crema border-y-[3px] border-noche dark:border-crema" id="productos">
+  <div class="max-w-[var(--container-kuarahy)] mx-auto px-6">
+    <p class="reveal font-display text-xs tracking-[1px] text-sol mb-4 uppercase">02 ▸ SAAS</p>
+    <h2 class="reveal font-display font-bold text-[clamp(1.6rem,4vw,2.6rem)] leading-[1.15] uppercase mb-[18px]">NUESTROS PRODUCTOS</h2>
+    <p class="reveal max-w-[560px] text-mist mb-12">
+      Software como servicio: herramientas nuestras, listas para usar. Sin instalar nada, sin dolores de cabeza.
+    </p>
+
+    <div class="grid grid-cols-2 gap-8 max-[900px]:grid-cols-1">
+      {productos.map((p) => (
+        <article class="saas-card reveal flex flex-col items-start bg-panel border-pixel border-crema shadow-[8px_8px_0_#000] p-9 px-8">
+          <p class={`inline-block font-display text-[10px] tracking-[1px] text-noche px-2.5 py-[5px] mb-5 ${p.soon ? 'bg-cielo' : 'bg-sol'}`}>{p.badge}</p>
+          <h3 class="font-display font-bold text-[19px] text-crema leading-[1.35] uppercase mb-3">{p.title}</h3>
+          <p class="text-mist mb-[22px]">{p.desc}</p>
+          <ul class="flex-grow mb-[30px]">
+            {p.feats.map((f) => (
+              <li class="font-display text-[11px] tracking-[1px] text-sol py-1.5">▸ {f}</li>
+            ))}
+          </ul>
+          <div class="flex flex-wrap gap-3.5">
+            {p.ctas.map((cta) => (
+              <Button href={cta.href} variant={cta.primary ? 'primary' : 'ghost-dark'} external>{cta.label}</Button>
+            ))}
+          </div>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>

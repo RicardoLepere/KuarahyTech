@@ -1,0 +1,28 @@
+---
+import { FOOTER_LINKS, WHATSAPP_DISPLAY, EMAIL } from '../data/site';
+---
+
+<footer class="footer bg-noche text-crema py-14 pb-10 dark:border-t-[3px] dark:border-crema">
+  <div class="max-w-[var(--container-kuarahy)] mx-auto px-6 flex flex-col items-center gap-7 text-center">
+    <div class="footer-brand">
+      <img src="/img/brand/isotipo-blanco-transparente.png" alt="Kuarahy Tech" class="h-[52px] w-auto mx-auto mb-3.5">
+      <p class="font-display text-xs tracking-[2px] text-sol">EL SOL SALE PARA TODOS ▸</p>
+    </div>
+    <ul class="flex flex-wrap justify-center gap-x-6.5 gap-y-3">
+      {FOOTER_LINKS.map((link) => (
+        <li>
+          <a
+            href={link.href}
+            target={'external' in link && link.external ? '_blank' : undefined}
+            rel={'external' in link && link.external ? 'noopener' : undefined}
+            class="font-display text-[10px] tracking-[1px] text-crema hover:text-sol"
+          >{link.label}</a>
+        </li>
+      ))}
+    </ul>
+    <p class="font-display text-[10px] tracking-[1px] text-crema">
+      {WHATSAPP_DISPLAY} ▸ <a href={`mailto:${EMAIL}`} class="text-sol hover:text-amanecer">{EMAIL.toUpperCase()}</a>
+    </p>
+    <p class="font-display text-[9px] tracking-[1px] text-slate">© 2026 KUARAHY TECH ▸ ASUNCIÓN, PARAGUAY ▸ DESDE PARAGUAY PARA EL MUNDO</p>
+  </div>
+</footer>
