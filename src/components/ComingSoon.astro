@@ -1,0 +1,39 @@
+---
+import Button from './Button.astro';
+import { waLink, EMAIL } from '../data/site';
+---
+
+<section class="min-h-screen flex items-center justify-center px-6 py-16">
+  <div class="w-full max-w-[560px] border-pixel border-noche dark:border-crema bg-noche shadow-pixel-sol">
+    <div class="flex items-center gap-2 py-2.5 px-3.5 bg-sol border-b-[3px] border-noche">
+      <span class="w-2.5 h-2.5 bg-noche"></span>
+      <span class="w-2.5 h-2.5 bg-amanecer"></span>
+      <span class="w-2.5 h-2.5 bg-crema"></span>
+      <span class="ml-auto font-display text-[10px] text-noche">kuarahy_tech.exe</span>
+    </div>
+
+    <div class="flex flex-col items-center text-center gap-8 px-6 pt-12 pb-10">
+      <div id="heroSun" class="pixel-sun"></div>
+
+      <div>
+        <p class="font-display font-bold text-[15px] tracking-[1px] text-crema mb-4">
+          KUARAHY<span class="text-amanecer">.</span>TECH
+        </p>
+        <h1 class="font-display font-bold text-[clamp(1.8rem,7vw,2.8rem)] leading-[1.15] uppercase text-crema">
+          EL SOL ESTÁ<br>POR SALIR <span class="text-sol animate-blink">█</span>
+        </h1>
+      </div>
+
+      <p class="max-w-[380px] text-mist text-[1.05rem]">
+        Estamos construyendo nuestra nueva web. Mientras tanto, escribinos y contanos tu idea.
+      </p>
+
+      <div class="flex flex-wrap justify-center gap-4">
+        <Button href={waLink('Hola Kuarahy Tech! Quiero contarles mi idea')} variant="primary" external>WHATSAPP ▸</Button>
+        <Button href={`mailto:${EMAIL}`} variant="ghost-dark">ESCRIBINOS ▸</Button>
+      </div>
+
+      <p class="font-display text-[9px] tracking-[1px] text-slate">© 2026 KUARAHY TECH ▸ ASUNCIÓN, PARAGUAY</p>
+    </div>
+  </div>
+</section>
