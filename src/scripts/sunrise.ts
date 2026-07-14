@@ -130,19 +130,20 @@ export function initSunrise(): void {
 
     stars!.style.opacity = String(1 - smoothstep(0, 0.5, p));
 
-    const moonTop = lerp(moonStartTop, moonEndTop, easeInCubic(p));
+    const mp = clamp(p / 0.5, 0, 1);            // la luna completa su bajada en la 1ª mitad
+    const moonTop = lerp(moonStartTop, moonEndTop, easeInCubic(mp));
     moonEl!.style.top = `${moonTop}px`;
-    moonEl!.style.opacity = String(1 - smoothstep(0.55, 0.95, p));
+    moonEl!.style.opacity = String(1 - smoothstep(0.3, 0.5, p));  // ya invisible en p=0.5
 
     dawn!.style.opacity = String(smoothstep(0.1, 1, p));
 
     horizon!.style.background = lerpColor('#3A2E1A', '#FF6B35', smoothstep(0.1, 0.85, p));
     horizon!.style.opacity = String(0.5 + 0.5 * smoothstep(0.1, 0.8, p));
 
-    if (p <= 0.42) {
+    if (p <= 0.5) {
       sunEl!.style.opacity = '0';
     } else {
-      const sp = clamp((p - 0.42) / 0.58, 0, 1);
+      const sp = clamp((p - 0.5) / 0.5, 0, 1);
       sunEl!.style.opacity = String(clamp(sp * 1.8, 0, 1));
       sunEl!.style.top = `${lerp(sunStartTop, sunRestTop, easeOutCubic(sp))}px`;
     }
@@ -159,7 +160,7 @@ export function initSunrise(): void {
   if (reducedMotion) {
     render(1);
   } else {
-    const HOLD = 0.8, DAWN = 4.8;
+    const HOLD = 1.8, DAWN = 5;
     /* t0 se fija en el primer frame real: si la página carga en una pestaña de fondo,
        la animación arranca desde cero cuando el usuario la mira, no "gastada". */
     let t0 = 0;
