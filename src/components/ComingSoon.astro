@@ -1,39 +1,75 @@
 ---
 import Button from './Button.astro';
 import { waLink, EMAIL } from '../data/site';
+
+/* estrellas: posiciones fijas (% dentro del cielo) + delay para el titileo */
+const stars = [
+  { top: '18%', left: '12%', d: '0s' },
+  { top: '30%', left: '82%', d: '.6s' },
+  { top: '12%', left: '55%', d: '1.2s' },
+  { top: '44%', left: '24%', d: '.3s' },
+  { top: '22%', left: '68%', d: '1.8s' },
+  { top: '52%', left: '90%', d: '.9s' },
+  { top: '38%', left: '44%', d: '1.5s' },
+  { top: '60%', left: '16%', d: '.4s' },
+  { top: '16%', left: '34%', d: '2.1s' },
+  { top: '48%', left: '60%', d: '1s' },
+  { top: '28%', left: '6%', d: '1.7s' },
+  { top: '58%', left: '74%', d: '.2s' },
+];
 ---
 
-<section class="min-h-screen flex items-center justify-center px-6 py-16">
-  <div class="w-full max-w-[560px] border-pixel border-noche dark:border-crema bg-noche shadow-pixel-sol">
-    <div class="flex items-center gap-2 py-2.5 px-3.5 bg-sol border-b-[3px] border-noche">
+<div class="min-h-screen w-full bg-crema dark:bg-noche md:flex md:items-center md:justify-center md:px-6 md:py-10">
+  <section
+    id="csScene"
+    class="cs-scene relative overflow-hidden bg-noche flex flex-col
+      w-full min-h-screen
+      md:w-[min(900px,92vw)] md:min-h-0 md:h-[min(620px,86vh)]
+      md:border-pixel md:border-noche md:dark:border-crema md:shadow-pixel-sol"
+  >
+    <!-- degradé de amanecer (opacity la maneja el script) -->
+    <div id="csDawn" class="absolute inset-0 z-0 pointer-events-none" style="opacity:0"></div>
+
+    <!-- barra de ventana (solo desktop) -->
+    <div class="relative z-10 hidden md:flex items-center gap-2 py-2.5 px-3.5 bg-sol border-b-[3px] border-noche">
       <span class="w-2.5 h-2.5 bg-noche"></span>
       <span class="w-2.5 h-2.5 bg-amanecer"></span>
       <span class="w-2.5 h-2.5 bg-crema"></span>
       <span class="ml-auto font-display text-[10px] text-noche">kuarahy_tech.exe</span>
     </div>
 
-    <div class="flex flex-col items-center text-center gap-8 px-6 pt-12 pb-10">
-      <div id="heroSun" class="pixel-sun"></div>
-
-      <div>
-        <p class="font-display font-bold text-[15px] tracking-[1px] text-crema mb-4">
-          KUARAHY<span class="text-amanecer">.</span>TECH
-        </p>
-        <h1 class="font-display font-bold text-[clamp(1.8rem,7vw,2.8rem)] leading-[1.15] uppercase text-crema">
-          EL SOL ESTÁ<br>POR SALIR <span class="text-sol animate-blink">█</span>
-        </h1>
+    <!-- CIELO ▸ escena animada -->
+    <div id="csSky" class="relative z-10 flex-none overflow-hidden h-[48vh] md:h-[300px]">
+      <div id="csStars" class="absolute inset-0">
+        {stars.map((s) => (
+          <span class="cs-star" style={`top:${s.top};left:${s.left};animation-delay:${s.d}`}></span>
+        ))}
       </div>
+      <div id="csMoon" class="pixel-moon"></div>
+      <div id="csSun" class="pixel-sun"></div>
+      <div id="csHorizon" class="absolute bottom-0 left-0 right-0 h-[3px]" style="background:#3A2E1A;opacity:.5"></div>
+    </div>
 
-      <p class="max-w-[380px] text-mist text-[1.05rem]">
-        Estamos construyendo nuestra nueva web. Mientras tanto, escribinos y contanos tu idea.
+    <!-- CONTENIDO -->
+    <div class="relative z-10 flex-1 flex flex-col items-center justify-center text-center gap-6 px-6 py-10">
+      <p class="font-display text-[11px] tracking-[2px] text-sol">PRONTO ▸ KUARAHY TECH</p>
+
+      <h1 class="font-display font-bold text-[clamp(1.8rem,7vw,2.8rem)] leading-[1.15] uppercase text-crema">
+        EL SOL ESTÁ<br>POR SALIR <span class="text-sol animate-blink">█</span>
+      </h1>
+
+      <p class="max-w-[400px] text-crema/85 text-[1.05rem]">
+        Estamos construyendo nuestra nueva web. Cuando amanezca, vas a ser de los primeros en saberlo.
       </p>
 
-      <div class="flex flex-wrap justify-center gap-4">
-        <Button href={waLink('Hola Kuarahy Tech! Quiero contarles mi idea')} variant="primary" external>WHATSAPP ▸</Button>
-        <Button href={`mailto:${EMAIL}`} variant="ghost-dark">ESCRIBINOS ▸</Button>
+      <div class="flex flex-col items-center gap-4 pt-1">
+        <Button href={waLink('Hola Kuarahy Tech! Quiero contarles mi idea')} variant="primary" external>HABLEMOS POR WHATSAPP ▸</Button>
+        <p class="font-display text-[10px] tracking-[1px] text-mist">
+          O ESCRIBINOS ▸ <a href={`mailto:${EMAIL}`} class="text-sol hover:text-amanecer">{EMAIL.toUpperCase()}</a>
+        </p>
       </div>
 
-      <p class="font-display text-[9px] tracking-[1px] text-slate">© 2026 KUARAHY TECH ▸ ASUNCIÓN, PARAGUAY</p>
+      <p class="font-display text-[9px] tracking-[1px] text-slate mt-2">© 2026 KUARAHY TECH ▸ ASUNCIÓN, PARAGUAY</p>
     </div>
-  </div>
-</section>
+  </section>
+</div>

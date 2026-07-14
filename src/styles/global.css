@@ -104,9 +104,22 @@ body.loading { overflow: hidden; }
 .reveal { opacity: 0; transform: translateY(22px); transition: opacity .6s ease, transform .6s ease; }
 .reveal.visible { opacity: 1; transform: none; }
 
+/* ══ COMING SOON ▸ AMANECER ══ */
+.pixel-moon { position: relative; image-rendering: pixelated; }
+.pixel-moon .px { position: absolute; }
+.cs-star {
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  background: var(--color-crema);
+  image-rendering: pixelated;
+  animation: twinkle 3s ease-in-out infinite;
+}
+@keyframes twinkle { 0%, 100% { opacity: .2; } 50% { opacity: 1; } }
+
 /* ══ MOVIMIENTO REDUCIDO ══ */
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .reveal { opacity: 1; transform: none; transition: none; }
-  .cursor, .pixel-sun .px.ray-glow { animation: none; }
+  .cursor, .pixel-sun .px.ray-glow, .cs-star { animation: none; }
 }
