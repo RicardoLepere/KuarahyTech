@@ -6,18 +6,18 @@ export interface Valor {
 
 export const valores: Valor[] = [
   {
-    title: '▸ UNA SOLA MARCA',
-    desc: 'El estudio y los productos comparten identidad: mismo logo, misma paleta, misma seriedad. Tratás con una empresa consolidada.',
+    title: '▸ Misión',
+    desc: 'Potenciar a las empresas paraguayas a través de tecnología a medida, cercana y confiable. Desarrollamos software que simplifica el trabajo diario, cuidando cada detalle con un equipo humano que acompaña el crecimiento de nuestros clientes de principio a fin.',
     borderColor: 'sol',
   },
   {
-    title: '▸ CERCANÍA REAL',
-    desc: 'Hablás directo con quienes escriben el código. Sin intermediarios, sin jerga corporativa, sin vueltas.',
+    title: '▸ Visión',
+    desc: 'Ser el aliado tecnológico de confianza para las organizaciones en Paraguay, reconocidos no solo por la calidad de nuestro código, sino por la calidez y permanencia en el vínculo que construimos con cada cliente.',
     borderColor: 'amanecer',
   },
   {
-    title: '▸ DESDE EL DÍA UNO',
-    desc: 'Entregamos cosas que funcionan. Frases cortas, verbos de acción y software que sale a producción.',
+    title: '▸ Compromiso',
+    desc: 'En Kuarahy Tech, nuestra palabra vale. Construimos soluciones reales y funcionales, manteniendo una relación de transparencia total. Nos comprometemos con tu proyecto como si fuera nuestro, porque creemos que la mejor tecnología es aquella que se crea con dedicación, honestidad y un equipo que siempre está ahí para ti.',
     borderColor: 'cielo',
   },
 ];

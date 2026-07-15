@@ -47,4 +47,20 @@ export const productos: Producto[] = [
       { label: 'CONSULTAR ▸', href: waLink('Hola! Quiero saber más sobre Cuadre'), primary: false },
     ],
   },
+
+  {
+    badge: 'SAAS ▸ SOPORTE',
+    soon: true,
+    title: 'MesaPlus ▸',
+    desc: 'Organizá el soporte de tu empresa en un solo lugar: tus clientes abren tickets, tu equipo los toma y los resuelve, y todo queda registrado. Con roles y permisos para que cada quien vea solo lo que le toca.',
+    feats: [
+      'Tickets con estados, asignación e historial',
+      'Roles y permisos: cada quien ve solo lo suyo',
+      'Panel de administración de usuarios',
+    ],
+    ctas: [
+      { label: 'PRÓXIMAMENTE ▸', href: '', primary: true },
+      { label: 'CONSULTAR ▸', href: waLink('Hola! Quiero saber más sobre MesaPlus'), primary: false },
+    ],
+  }
 ];

@@ -12,8 +12,5 @@ export const faq: FaqItem[] = [
     pregunta: '¿EN CUÁNTO TIEMPO ENTREGAN?',
     respuesta: 'Una landing page entre 1 y 2 semanas. Un sitio institucional entre 3 y 6 semanas, dependiendo de la complejidad y la velocidad de feedback.',
   },
-  {
-    pregunta: '¿INCLUYEN HOSTING Y DOMINIO?',
-    respuesta: 'El hosting está incluido en todos los planes. El dominio lo podés registrar vos o te ayudamos a gestionarlo.',
-  },
+  
 ];

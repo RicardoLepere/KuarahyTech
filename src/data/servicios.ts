@@ -20,7 +20,7 @@ export const servicios: Servicio[] = [
     num: 'S2',
     title: 'SITIOS INSTITUCIONALES',
     desc: 'Presencia online completa. Múltiples secciones y panel editable.',
-    feats: ['5 a 10 secciones', 'CMS editable', 'Hosting incluido'],
+    feats: ['5 a 10 secciones', 'CMS editable', 'SEO basico incluido'],
     ctaHref: waLink('Hola! Quiero cotizar un sitio institucional'),
   },
   {

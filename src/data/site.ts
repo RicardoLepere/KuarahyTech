@@ -1,5 +1,5 @@
 // Cambiá a true para mostrar la página "Próximamente" en vez del sitio completo.
-export const COMING_SOON = true;
+export const COMING_SOON = false;
 
 export const WHATSAPP_NUMBER = '595985895895';
 export const WHATSAPP_DISPLAY = '+595 985 895 895';

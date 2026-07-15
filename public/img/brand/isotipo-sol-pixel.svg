@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 13 8" width="390" height="240" shape-rendering="crispEdges" role="img" aria-label="Isotipo Kuarahy Tech — sol pixel">
+  <!--
+    Kuarahy Tech ▸ isotipo (sol pixel)
+    Grilla 13×8. Sol #FFB020, Amanecer #FF6B35.
+    Los rayos (grupo .rays) parpadean como en el sitio.
+    Fondo transparente. Editable pixel por pixel.
+  -->
+  <style>
+    .rays { animation: rayPulse 2.8s ease-in-out infinite; }
+    @keyframes rayPulse { 0%, 100% { opacity: 1; } 50% { opacity: .35; } }
+    @media (prefers-reduced-motion: reduce) { .rays { animation: none; } }
+  </style>
+
+  <!-- rayos (parpadean) -->
+  <g class="rays" fill="#FFB020">
+    <rect x="6" y="0" width="1" height="1"/>
+    <rect x="3" y="1" width="1" height="1"/>
+    <rect x="6" y="1" width="1" height="1"/>
+    <rect x="9" y="1" width="1" height="1"/>
+  </g>
+
+  <!-- corona + cuerpo del sol -->
+  <g fill="#FF6B35">
+    <rect x="5" y="3" width="1" height="1"/>
+    <rect x="6" y="3" width="1" height="1"/>
+    <rect x="7" y="3" width="1" height="1"/>
+    <rect x="4" y="4" width="1" height="1"/>
+    <rect x="5" y="4" width="1" height="1"/>
+    <rect x="6" y="4" width="1" height="1"/>
+    <rect x="7" y="4" width="1" height="1"/>
+    <rect x="8" y="4" width="1" height="1"/>
+    <rect x="4" y="5" width="1" height="1"/>
+    <rect x="5" y="5" width="1" height="1"/>
+    <rect x="6" y="5" width="1" height="1"/>
+    <rect x="7" y="5" width="1" height="1"/>
+    <rect x="8" y="5" width="1" height="1"/>
+  </g>
+
+  <!-- guiones laterales + barra del horizonte -->
+  <g fill="#FFB020">
+    <rect x="0" y="5" width="1" height="1"/>
+    <rect x="1" y="5" width="1" height="1"/>
+    <rect x="11" y="5" width="1" height="1"/>
+    <rect x="12" y="5" width="1" height="1"/>
+    <rect x="0" y="7" width="13" height="1"/>
+  </g>
+</svg>
