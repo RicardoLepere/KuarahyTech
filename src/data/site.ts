@@ -3,7 +3,7 @@ export const COMING_SOON = false;
 
 export const WHATSAPP_NUMBER = '595985895895';
 export const WHATSAPP_DISPLAY = '+595 985 895 895';
-export const EMAIL = 'hola@kuarahy.tech';
+export const EMAIL = 'grupo@kuarahy-tech.com.py';
 
 export function waLink(message: string): string {
   return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(`${message} ▸`)}`;

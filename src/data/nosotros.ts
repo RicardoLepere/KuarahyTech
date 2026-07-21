@@ -34,15 +34,22 @@ export const equipo: TeamMember[] = [
   {
     initial: 'L',
     name: 'LUCIANO MENDIETA',
-    role: 'Frontend developer ▸ foco en frontend y atención a la lógica del programa.',
-    stack: ['ASTRO', 'TAILWIND', 'ASP .NET CORE', 'BLAZOR'],
+    role: 'Full-stack Developer ▸ Arquitectura backend, APIs e integraciones.',
+    stack: ['ASP.NET CORE', 'ENTITY FRAMEWORK', 'BLAZOR', 'SQL SERVER', 'TAILWIND'],
     avatarAlt: false,
   },
   {
     initial: 'R',
     name: 'RICARDO PEREZ',
-    role: 'Backend developer ▸ backend, lógica de negocio e integraciones.',
-    stack: ['LARAVEL', 'POSTGRES', 'JAVASCRIPT', 'N8N'],
+    role: 'Full-stack Developer ▸ Backend, APIs, automatización',
+    stack: ['PHP', 'LARAVEL', 'JAVASCRIPT', 'PYTHON', 'N8N', 'POWER AUTOMATE'],
     avatarAlt: true,
   },
+  {
+    initial: 'J',
+    name: 'JAVIER LIVIERES',
+    role: 'Security Administrator - Gestión de políticas, operaciones de seguridad y defensa empresarial',
+    stack: ['SECOPS', 'POLICY MGMT', 'THREAT HUNTING', 'BLUE TEAM'],
+    avatarAlt: true
+  }
 ];
