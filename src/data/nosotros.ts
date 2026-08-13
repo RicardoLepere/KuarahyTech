@@ -41,8 +41,8 @@ export const equipo: TeamMember[] = [
   {
     initial: 'R',
     name: 'RICARDO PEREZ',
-    role: 'Full-stack Developer ▸ Backend, APIs, CRM, automatización. Modelado de datos.  ',
-    stack: ['PHP', 'LARAVEL', 'JAVASCRIPT', 'PYTHON', 'N8N', 'POWER AUTOMATE'],
+    role: 'Full-stack Developer ▸ Backend, APIs, automatización. Modelado de datos. Inteligencia de negocios y diseño de Bases de datos.  ',
+    stack: ['PHP', 'LARAVEL', 'JAVASCRIPT', 'PYTHON', 'N8N', 'POWER AUTOMATE', 'CRM', 'POSTGRESQL'],
     avatarAlt: true,
   },
   {
