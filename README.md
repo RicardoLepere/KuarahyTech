@@ -62,3 +62,4 @@ El texto de cada sección vive en `src/data/`: para cambiar un servicio, product
 ## Contacto
 
 [WhatsApp](https://wa.me/595985895895)
+Mas actualizaciones proximamente 
