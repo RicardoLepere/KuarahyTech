@@ -22,6 +22,14 @@ import { casos } from '../data/casos';
             <p class="text-[.95rem] text-muted dark:text-muted-dark mt-2.5"><strong class="text-noche dark:text-crema font-semibold">Problema ▸</strong> {c.problema}</p>
             <p class="text-[.95rem] text-muted dark:text-muted-dark mt-2.5"><strong class="text-noche dark:text-crema font-semibold">Solución ▸</strong> {c.solucion}</p>
             <p class="text-[.95rem] text-muted dark:text-muted-dark mt-2.5"><strong class="text-noche dark:text-crema font-semibold">Resultado ▸</strong> {c.resultado}</p>
+            {c.link && (
+                <a
+                  href={c.link}
+                  target="_blank"
+                  rel="noopener"
+                  class="font-display text-[11px] tracking-[1px] border-b-[3px] border-sol pb-[3px] mt-4 inline-block transition-colors duration-150 hover:text-amanecer"
+                >VISITAR SITIO ▸</a>
+              )}
           </div>
         </article>
       ))}
