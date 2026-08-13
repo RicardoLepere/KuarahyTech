@@ -5,24 +5,25 @@ export interface Caso {
   solucion: string;
   resultado: string;
   img?: { src: string; alt: string };
+  link?: string;
 }
 
 export const casos: Caso[] = [
+    {
+    tag: 'WEB ▸ LANDING',
+    title: 'GUERAHA - SERVICIO DE COURRIER',
+    problema: 'No tenía presencia digital.',
+    solucion: 'Le armamos redes sociales, página web e identidad digital de punta a punta.',
+    resultado: 'Hoy tiene presencia en las principales redes sociales y una página web 100% funcional.',
+    img: { src: '/img/casos/gueraha.png', alt: 'Página web de Gueraha, servicio de courrier'},
+    link: "https://gueraha.com.py/"
+  },
   {
     tag: 'RPA ▸ CUADRE',
     title: 'ENTIDAD FINANCIERA',
     problema: 'El equipo de verificación de créditos perdía horas promediando a mano los comprobantes de ingresos que mandaban los bancos.',
     solucion: 'Implementamos Cuadre, nuestro RPA que lee los comprobantes y calcula el promedio de ingresos automáticamente.',
     resultado: 'Lo que antes tomaba horas ahora se resuelve en segundos, sin errores de tipeo ni cuentas a mano.',
-  },
-  
-  
-  {
-    tag: 'ESTUDIO ▸ AUTOMATIZACIÓN',
-    title: 'COMERCIO RETAIL',
-    problema: 'Mandaban los mensajes de WhatsApp a sus clientes uno por uno, a mano: horas perdidas todos los días.',
-    solucion: 'Implementamos un bot RPA que envía los mensajes de forma automática, sin que nadie tenga que tipear nada.',
-    resultado: 'El equipo se liberó de una tarea repetitiva y los mensajes salen siempre a tiempo.',
   },
   {
     tag: 'SAAS ▸ COBRANZAS 360',
