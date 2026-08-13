@@ -1,6 +1,6 @@
 ---
 import Button from './Button.astro';
-import { servicios, proceso } from '../data/servicios';
+import { servicios} from '../data/servicios';
 import { waLink } from '../data/site';
 ---
 
@@ -12,7 +12,7 @@ import { waLink } from '../data/site';
       Desarrollo a medida con dedicación total a tu proyecto. Frases cortas, código claro, entregas que funcionan.
     </p>
 
-    <div class="grid grid-cols-4 gap-6 max-[900px]:grid-cols-2 max-[560px]:grid-cols-1">
+    <div class="grid grid-cols-3 gap-6 max-[900px]:grid-cols-2 max-[560px]:grid-cols-1">
       {servicios.map((s) => (
         <article class="card reveal bg-white dark:bg-panel border-pixel border-noche dark:border-crema shadow-pixel-lg p-7 px-6 transition-[transform,box-shadow] duration-150 hover:translate-x-[3px] hover:translate-y-[3px] hover:shadow-pixel-xs">
           <p class="inline-block font-display text-[11px] bg-sol text-noche border-2 border-noche px-2 py-1 mb-[18px]">{s.num}</p>
@@ -33,16 +33,6 @@ import { waLink } from '../data/site';
       ))}
     </div>
 
-    <div class="process reveal flex flex-wrap items-center justify-center gap-x-[22px] gap-y-4 mt-14 py-[26px] px-5 border-pixel border-noche dark:border-crema bg-white dark:bg-panel shadow-pixel-lg font-display text-xs tracking-[1px] text-center">
-      {proceso.map((p, i) => (
-        <>
-          <span class="flex flex-col gap-1">
-            {p.step}<small class="font-body text-[.78rem] font-medium tracking-normal normal-case text-muted dark:text-muted-dark">{p.time}</small>
-          </span>
-          {i < proceso.length - 1 && <span class="text-amanecer text-[15px]">▸</span>}
-        </>
-      ))}
-    </div>
 
     <div class="reveal mt-12">
       <Button href={waLink('Hola! Quiero cotizar un proyecto con el estudio')} variant="primary" external>COTIZÁ TU PROYECTO ▸</Button>

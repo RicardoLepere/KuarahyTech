@@ -37,11 +37,12 @@ export const servicios: Servicio[] = [
     feats: ['Actualizaciones de seguridad', 'Mejoras menores', 'Soporte por WhatsApp'],
     ctaHref: waLink('Hola! Quiero un plan de mantenimiento'),
   },
+    {
+    num: 'S5',
+    title: 'CRM',
+    desc: 'Un lugar único para gestionar clientes, seguimientos y ventas, sin planillas sueltas.',
+    feats: ['Seguimiento de clientes', 'Historial centralizado', 'Reportes en tiempo real'],
+    ctaHref: waLink('Hola! Quiero cotizar un CRM'),
+  }
 ];
 
-export const proceso = [
-  { step: 'HABLAMOS', time: '1 día' },
-  { step: 'PROPUESTA', time: '2-3 días' },
-  { step: 'CONSTRUIMOS', time: '3-6 semanas' },
-  { step: 'LANZAMOS', time: '1 día' },
-];

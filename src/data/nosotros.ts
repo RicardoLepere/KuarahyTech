@@ -34,14 +34,14 @@ export const equipo: TeamMember[] = [
   {
     initial: 'L',
     name: 'LUCIANO MENDIETA',
-    role: 'Full-stack Developer ▸ Arquitectura backend, APIs e integraciones.',
+    role: 'Full-stack Developer ▸ Arquitectura backend, APIs e integraciones. Modelado de datos.',
     stack: ['ASP.NET CORE', 'ENTITY FRAMEWORK', 'BLAZOR', 'SQL SERVER', 'TAILWIND'],
     avatarAlt: false,
   },
   {
     initial: 'R',
     name: 'RICARDO PEREZ',
-    role: 'Full-stack Developer ▸ Backend, APIs, automatización',
+    role: 'Full-stack Developer ▸ Backend, APIs, CRM, automatización. Modelado de datos.  ',
     stack: ['PHP', 'LARAVEL', 'JAVASCRIPT', 'PYTHON', 'N8N', 'POWER AUTOMATE'],
     avatarAlt: true,
   },
